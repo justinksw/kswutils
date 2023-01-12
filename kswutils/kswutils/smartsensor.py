@@ -10,7 +10,7 @@ from .fileio import FileIO
 # SHEET NAME
 ACCELERATION_SHEET = 'Accelerometer'
 MAGNETICFIELD_SHEET = 'Magnetometer'
-LOWPOWER_ACCELERATION_SHEET = 'Low power accelerometer'
+# LOWPOWER_ACCELERATION_SHEET = 'Low power accelerometer'
 MICROPHONE_SHEET = 'Microphone'
 
 # DATA COLUMN NAME
@@ -41,8 +41,8 @@ class SmartSensor:
     def get_microphone(self):
         return pd.read_excel(self.xls, MICROPHONE_SHEET)
 
-    def get_acceleration_lowpwer(self):
-        return pd.read_excel(self.xls, LOWPOWER_ACCELERATION_SHEET)
+    # def get_acceleration_lowpwer(self):
+    #     return pd.read_excel(self.xls, LOWPOWER_ACCELERATION_SHEET)
 
     # Get acceleration components
     def get_Ax(self):
@@ -68,9 +68,9 @@ class SmartSensor:
     def get_Sound(self):
         return self.get_microphone()[SOUND_COL].to_numpy()
 
-    # Get low power acceleration Az
-    def get_Az_lp(self):
-        return self.get_acceleration_lowpwer()[AZ_COL].to_numpy()
+    # # Get low power acceleration Az
+    # def get_Az_lp(self):
+    #     return self.get_acceleration_lowpwer()[AZ_COL].to_numpy()
 
     # Get sampling rate
     # accelerometor  # 3611.1111
@@ -125,36 +125,44 @@ def combine_data(folder, tag='Az'):
         except:
             continue
 
-        if tag == 'smartsensor_Az':
+        if tag == 'Az':
             data = smartsensor.get_Az()
             data_ls.append(data)
 
-        elif tag == 'smartsensor_Az_lp':
-            data = smartsensor.get_Az_lp()
+        elif tag == 'Ax':
+            data = smartsensor.get_Ax()
             data_ls.append(data)
 
-        elif tag == 'smartsensor_sound':
-            data = smartsensor.get_Sound()
+        elif tag == 'Ay':
+            data = smartsensor.get_Ay()
             data_ls.append(data)
 
-        elif tag == 'smartsensor_Bx':
+        elif tag == 'Bz':
+            data = smartsensor.get_Bz()
+            data_ls.append(data)
+
+        elif tag == 'Bx':
             data = smartsensor.get_Bx()
             data_ls.append(data)
 
-        elif tag == 'smartsensor_By':
+        elif tag == 'By':
             data = smartsensor.get_By()
             data_ls.append(data)
 
-        elif tag == 'smartsensor_Bz':
-            data = smartsensor.get_Bz()
+        elif tag == 'Sound':
+            data = smartsensor.get_Sound()
             data_ls.append(data)
 
     return np.concatenate(data_ls)
 
 
-def save_pkl(inpdir, outdir, name, datatype):
+def save_pkl(inpdir, outdir, name, tag):
+    """
+    tag (string): 'Az', 'Bz', 'Sound'
+    """
+
     print('Input:', inpdir)
-    data = combine_data(inpdir, tag=datatype)
+    data = combine_data(inpdir, tag=tag)
 
     savepath = os.path.join(outdir, name + 'pickle')
     FileIO.write_pickle(data, savepath=savepath)
