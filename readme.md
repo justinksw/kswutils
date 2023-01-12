@@ -23,5 +23,14 @@ The functions frequently used in my current work are uploaded to the Python Pack
 > twine upload dist/*
 
 ### Reupload
+
 - Change the version number in setup.py
 - Remove the previous dist folder
+
+### To use
+
+> pip install {package}
+
+> pip install {package} --upgrade
+
+> pip install {package} -U
