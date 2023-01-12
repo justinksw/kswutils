@@ -27,7 +27,7 @@ The functions frequently used in my current work are uploaded to the Python Pack
 - Change the version number in setup.py
 - Remove the previous dist folder
 
-### To use
+### To use / upgrade
 
 > pip install {package}
 
