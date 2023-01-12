@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(name='kswutils',
-      version='0.0',
-      description='Utils',
-      packages=['dist_alx'],
-      author_email='mihajlovic.aleksa@gmail.com',
+      version='0.1.1',
+      description='Justin utils at work',
+      packages=['kswutils'],
+      author_email='shuwa108@gmail.com',
       zip_safe=False)
