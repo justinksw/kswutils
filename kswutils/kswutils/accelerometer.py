@@ -52,7 +52,7 @@ def save_pkl(inpdir, outdir, name):
     print('Input:', inpdir)
     data = combine_data(inpdir)
 
-    savepath = os.path.join(outdir, name + 'pickle')
+    savepath = os.path.join(outdir, name + '.pickle')
     FileIO.write_pickle(data, savepath=savepath)
     print('Saved to:', outdir)
     return None
