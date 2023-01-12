@@ -10,9 +10,10 @@ from . import calculator as ca
 mpl.rcParams['agg.path.chunksize'] = 10**10
 
 
-class Plots:
+class DrawIO:
     def __init__(self) -> None:
-        self.imsize = (16, 9)
+        # self.imsize = (16, 9)
+        pass
 
     @staticmethod
     def data1d(data, **kwargs):
