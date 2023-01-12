@@ -32,5 +32,3 @@ The functions frequently used in my current work are uploaded to the Python Pack
 > pip install {package}
 
 > pip install {package} --upgrade
-
-> pip install {package} -U
