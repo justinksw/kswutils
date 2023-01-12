@@ -6,5 +6,6 @@
 ## Prerequisites
 
 > numpy.__version__ == '1.19.5'
+
 > scipy.__version__ == '1.8.1'
-> 
+
