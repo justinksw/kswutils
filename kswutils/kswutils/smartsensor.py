@@ -4,7 +4,8 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-from .fileio import get_subdirectories, write_pickle
+from .fileio import FileIO
+
 
 # SHEET NAME
 ACCELERATION_SHEET = 'Accelerometer'
@@ -112,7 +113,7 @@ class SmartSensor:
 
 
 def combine_data(folder, tag='Az'):
-    files = get_subdirectories(folder)
+    files = FileIO.get_subdirectories(folder)
 
     data_ls = []
 
@@ -151,10 +152,11 @@ def combine_data(folder, tag='Az'):
     return np.concatenate(data_ls)
 
 
-def save_pkl(inpdir, outdir, savename, datatype):
+def save_pkl(inpdir, outdir, name, datatype):
     print('Input:', inpdir)
     data = combine_data(inpdir, tag=datatype)
 
-    write_pickle(outdir, data, obj_name=savename)
+    savepath = os.path.join(outdir, name + 'pickle')
+    FileIO.write_pickle(data, savepath=savepath)
     print('Saved to:', outdir)
     return None

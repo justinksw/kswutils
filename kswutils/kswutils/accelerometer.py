@@ -2,8 +2,8 @@ import os
 
 import numpy as np
 
+from .fileio import FileIO
 from .calculator import isfloat
-from .fileio import get_subdirectories, write_pickle
 
 
 class Accelerometer:
@@ -33,7 +33,7 @@ class Accelerometer:
 
 
 def combine_data(folder):
-    files = get_subdirectories(folder)
+    files = FileIO.get_subdirectories(folder)
 
     acc_ls = []
 
@@ -52,6 +52,7 @@ def save_pkl(inpdir, outdir, name):
     print('Input:', inpdir)
     data = combine_data(inpdir)
 
-    write_pickle(outdir, data, obj_name=name)
+    savepath = os.path.join(outdir, name + 'pickle')
+    FileIO.write_pickle(data, savepath=savepath)
     print('Saved to:', outdir)
     return None
