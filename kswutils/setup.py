@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='kswutils',
-    version='0.1.6',
+    version='0.1.8',
     description='Justin utils at work',
     packages=['kswutils'],
     author_email='shuwa108@gmail.com',

@@ -56,6 +56,50 @@ class DrawIO:
         return None
 
     @staticmethod
+    def data1d_time(data, sr, **kwargs):
+        """ Plot 1d data versus time
+
+        Args:
+            data (array): shape:=(N,)
+            sr (int): sample rate 
+            show (bool): opt. default True
+            save (bool): opt. default False
+            savepath (string): opt. default './plot.jpg'
+            ylim (list): opt. [low, up]
+            title (string): opt.
+            xlabel (string): opt.
+            ylabel (string): opt.
+
+        Returns:
+            None
+        """
+        _show = kwargs.get('show', True)
+        _save = kwargs.get('save', False)
+        _savepath = kwargs.get('savepath', './plot.jpg')
+        _ylim = kwargs.get('ylim')
+        _title = kwargs.get('title')
+        _xlabel = kwargs.get('xlabel', 'Seconds [s]')
+        _ylabel = kwargs.get('ylabel', 'Acceleration [g]')
+
+        # Plot
+        fig, ax = plt.subplots()
+        data_len = len(data)
+        tmp = np.linspace(0, data_len, data_len)
+        time = tmp / sr
+        ax.plot(time, data)
+        ax.set_ylim(_ylim)
+        plt.title(_title)
+        plt.xlabel(_xlabel)
+        plt.ylabel(_ylabel)
+        plt.grid()
+
+        if _show:
+            plt.show()
+        if _save:
+            plt.savefig(_savepath)
+        return None
+
+    @staticmethod
     def fft(data, sr, **kwargs):
         """ Calculate and Plot FFT of data
 
