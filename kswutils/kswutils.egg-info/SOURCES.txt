@@ -5,6 +5,7 @@ kswutils/accelerometer.py
 kswutils/calculator.py
 kswutils/drawio.py
 kswutils/fileio.py
+kswutils/signalprocessing.py
 kswutils/smartsensor.py
 kswutils.egg-info/PKG-INFO
 kswutils.egg-info/SOURCES.txt
