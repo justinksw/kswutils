@@ -5,8 +5,8 @@
 
 ## Prerequisites
 
-> numpy.__version__ == '1.19.5'
+> numpy.__version__ == '1.20.3'
 
-> scipy.__version__ == '1.8.1'
+> scipy.__version__ == '1.10.0'
 
-> pandas.__version__ == '1.4.3'
+> pandas.__version__ == '1.3.5'
