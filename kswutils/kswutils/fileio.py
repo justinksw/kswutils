@@ -1,7 +1,6 @@
 import os
 import pickle
 
-# import fileio as io
 # Path vs Directory
 # Path is the directory to an object (a file)
 # Path: Obj
