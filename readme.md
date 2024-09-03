@@ -1,6 +1,7 @@
 # My Python Package Index (PyPI) Packages
 
 - [kswutils-fileio](https://pypi.org/project/kswutils-fileio/)
+- [kswutils-matplot](https://pypi.org/project/kswutils-matplot/)
 - [kswutils-plotly](https://pypi.org/project/kswutils-plotly/)
 
 ## [Package projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
