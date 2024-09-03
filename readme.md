@@ -28,6 +28,8 @@ packaging_tutorial/
 
 > python3.10 -m twine upload --repository pypi dist/*
 
+TOKEN in `$HOME/.pypirc`
+
 ## Reupload
 
 - Change the version number in setup.py
