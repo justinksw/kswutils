@@ -1,35 +1,39 @@
-# My Python Packages
+# My Python Package Index (PyPI) Packages
 
-The functions frequently used in my current work are uploaded to the Python Package Index (PyPI).
+<!-- - [kswutils](https://pypi.org/project/kswutils/) -->
 
-! This library is not longer under maintenance. had migrated to another.
+## [Package projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 
-## List
+```
+packaging_tutorial/
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── src/
+│   └── example_package_YOUR_USERNAME_HERE/
+│       ├── __init__.py
+│       └── example.py
+└── tests/
+```
 
-- [kswutils](https://pypi.org/project/kswutils/)
+> python3.10 -m pip install --upgrade pip
 
-## Remarks
-
-### Prerequisites
-
-> pip install setuptools
-
-> pip install twine
-
-### Steps
+> python3.10 -m pip install --upgrade build 
 
 > cd {package_dir}
 
-> python setup.py sdist
+> python3.10 -m build
 
-> twine upload dist/*
+> python3 -m pip install --upgrade twine
 
-### Reupload
+> python3.10 -m twine upload --repository pypi dist/*
+
+## Reupload
 
 - Change the version number in setup.py
 - Remove the previous dist folder
 
-### To use / upgrade
+## To use / upgrade
 
 > pip install {package}
 
