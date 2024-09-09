@@ -25,11 +25,11 @@ packaging_tutorial/
 
 > cd {package_dir}
 
-> ** python3.10 -m build **
+> **python3.10 -m build**
 
 > python3 -m pip install --upgrade twine
 
-> ** python3.10 -m twine upload --repository pypi dist/* **
+> **python3.10 -m twine upload --repository pypi dist/***
 
 TOKEN in `$HOME/.pypirc`
 
